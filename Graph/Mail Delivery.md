@@ -1,3 +1,5 @@
+Here edges matter if the edge is not visited we visit it and form an answer stack.
+
 Ah, this one is a **classic** — and the intuition is very clean once you see the right lens. This is the *postal worker problem*, aka **Eulerian circuit**.
 
 Let’s build the intuition, not jump to algorithms yet.
