@@ -6,7 +6,7 @@ This problem is based on re-rooting
 So while calculating the distance for node1 we parallely calculate the subtree size of each node we visit while calculating the answer for node 1
 
 ans[0] += current_lvl
-and size we for that node (v)
+and size we for that node (v) -> size of a subtree will be the sum of all the child node size + himself
 
 after that we need to do some re-rooting. When we move the root node to its neighbour node what all things chnages? 
 the answer would change in this way ans[v] = ans[root] - size(v) + (n - size(v))
