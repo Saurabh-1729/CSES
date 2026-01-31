@@ -39,7 +39,7 @@ void bfs(ll v, vector<ll> &dis, vector<vector<ll>> &adj)
 
         for (auto it : adj[node])
         {
-         // Node can be revisited and can get overwritten
+         // Node can be revisited and can get overwritten that is parents gets revisited from the child node and causes infinite loop
             if (dis[it] == -1) // ✅ VISITED CHECK
             {
                 dis[it] = dis[node] + 1;
