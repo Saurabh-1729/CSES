@@ -1,8 +1,3 @@
-Great, this is the **Graph Algorithms** section of CSES.
-Same deal as before: **not all of these are interview-relevant**, and interviewers strongly prefer **core graph patterns** over exotic ones.
-
-I’ll group them into **clear tiers**, explain *why*, and tell you what interviewers are actually looking for.
-
 ---
 
 # ⭐ Tier 1 — ABSOLUTE MUST-KNOW (asked all the time)
@@ -212,10 +207,3 @@ That covers **80–90% of interview graph questions**.
 
 ---
 
-If you want next, I can:
-
-* give a **1-week graph interview plan**
-* map each problem → exact **interview question type**
-* or tell you **which ones to safely skip**
-
-Just tell me 👍
