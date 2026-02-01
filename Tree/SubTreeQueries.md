@@ -277,6 +277,7 @@ int main() {
     vector<ll> flat(n + 1);
     for (int i = 1; i <= n; i++) {
         flat[tin[i]] = value[i];
+        // basically the nodes are visited in contgous order and indexing them on tin basis make sense.
     }
 
     // Build segment tree
