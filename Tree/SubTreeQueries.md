@@ -201,27 +201,45 @@ int tin[MAXN + 1], tout[MAXN + 1];
 int timer = 0;
 ll value[MAXN + 1];
 
-/* Fenwick Tree (BIT) */
-struct Fenwick {
+/* Segment Tree */
+struct SegmentTree {
     int n;
-    vector<ll> bit;
+    vector<ll> seg;
 
-    Fenwick(int n) : n(n), bit(n + 1, 0) {}
-
-    void update(int i, ll delta) {
-        for (; i <= n; i += i & -i)
-            bit[i] += delta;
+    SegmentTree(int n) : n(n) {
+        seg.assign(4 * n, 0);
     }
 
-    ll query(int i) {
-        ll sum = 0;
-        for (; i > 0; i -= i & -i)
-            sum += bit[i];
-        return sum;
+    void build(int idx, int l, int r, vector<ll>& arr) {
+        if (l == r) {
+            seg[idx] = arr[l];
+            return;
+        }
+        int mid = (l + r) / 2;
+        build(2 * idx, l, mid, arr);
+        build(2 * idx + 1, mid + 1, r, arr);
+        seg[idx] = seg[2 * idx] + seg[2 * idx + 1];
     }
 
-    ll rangeQuery(int l, int r) {
-        return query(r) - query(l - 1);
+    void update(int idx, int l, int r, int pos, ll val) {
+        if (l == r) {
+            seg[idx] = val;
+            return;
+        }
+        int mid = (l + r) / 2;
+        if (pos <= mid)
+            update(2 * idx, l, mid, pos, val);
+        else
+            update(2 * idx + 1, mid + 1, r, pos, val);
+        seg[idx] = seg[2 * idx] + seg[2 * idx + 1];
+    }
+
+    ll query(int idx, int l, int r, int ql, int qr) {
+        if (qr < l || r < ql) return 0;
+        if (ql <= l && r <= qr) return seg[idx];
+        int mid = (l + r) / 2;
+        return query(2 * idx, l, mid, ql, qr) +
+               query(2 * idx + 1, mid + 1, r, ql, qr);
     }
 };
 
@@ -252,15 +270,18 @@ int main() {
         tree[b].push_back(a);
     }
 
-    // Flatten the tree
+    // Flatten tree
     dfs(1, 0);
 
-    Fenwick fw(n);
-
-    // Initialize Fenwick Tree with node values
+    // Create flattened array
+    vector<ll> flat(n + 1);
     for (int i = 1; i <= n; i++) {
-        fw.update(tin[i], value[i]);
+        flat[tin[i]] = value[i];
     }
+
+    // Build segment tree
+    SegmentTree st(n);
+    st.build(1, 1, n, flat);
 
     // Process queries
     while (q--) {
@@ -270,18 +291,18 @@ int main() {
             int s;
             ll x;
             cin >> s >> x;
-            ll diff = x - value[s];
             value[s] = x;
-            fw.update(tin[s], diff);
+            st.update(1, 1, n, tin[s], x);
         } else {
             int s;
             cin >> s;
-            cout << fw.rangeQuery(tin[s], tout[s]) << '\n';
+            cout << st.query(1, 1, n, tin[s], tout[s]) << '\n';
         }
     }
 
     return 0;
 }
+
 ```
 
 ---
