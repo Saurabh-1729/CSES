@@ -1,8 +1,3 @@
-Nice list — that’s basically the **CSES Range Queries** section.
-For interviews, **not all of these are equally important**. Interviewers care less about exotic data structures and more about **core patterns** that generalize.
-
-I’ll break this into **tiers**, with *very clear guidance* on what you should prioritize.
-
 ---
 
 # ⭐ Tier 1 — MUST-KNOW (Very frequently asked)
@@ -164,11 +159,3 @@ Not whether you memorized 30 problem types.
 If you master those, **80% of the list becomes trivial**.
 
 ---
-
-If you want, I can:
-
-* map **each problem → exact interview concept**
-* suggest a **2-week prep plan**
-* or tell you **which to skip completely** for interviews
-
-Just say 👍
