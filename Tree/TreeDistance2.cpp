@@ -1,16 +1,185 @@
-/*
+````md id="jlwm0j"
+# Tree Distances II — Re-rooting DP Explanation
 
-This problem is based on re-rooting 
+## Problem Goal
 
-1. first we need to calculate the answer for any node, let it be node 1. 
-So while calculating the distance for node1 we parallely calculate the subtree size of each node we visit while calculating the answer for node 1
+For every node in the tree, compute:
 
-ans[0] += current_lvl
-and size we for that node (v) -> size of a subtree will be the sum of all the child node size + himself
+```text
+sum of distances from that node to all other nodes
+````
 
-after that we need to do some re-rooting. When we move the root node to its neighbour node what all things chnages? 
-the answer would change in this way ans[v] = ans[root] - size(v) + (n - size(v))
+---
 
-here root is basically the parent when we are doing dfs for the second time.
- 
-*/
+# Core Idea: Re-rooting DP
+
+Instead of running BFS/DFS from every node (`O(n²)`), we solve in:
+
+```text
+O(n)
+```
+
+using **2 DFS traversals**.
+
+---
+
+# Step 1: Compute Answer for One Root (Node 1)
+
+Assume node `1` is the initial root.
+
+During DFS:
+
+## A. Calculate Distance Sum for Node 1
+
+For each visited node:
+
+```cpp
+ans[1] += current_level;
+```
+
+Where:
+
+* root level = `0`
+* child level = `1`
+* grandchild = `2`
+
+So this gives:
+
+```text
+sum of distances from node 1 to all nodes
+```
+
+---
+
+## B. Calculate Subtree Sizes
+
+For every node `v`:
+
+```text
+subtreeSize[v] =
+1 + sum of subtree sizes of all children
+```
+
+The `1` counts the node itself.
+
+---
+
+# After DFS 1 We Know
+
+* `ans[1]` = total distance sum from node 1
+* `subtreeSize[v]` for every node
+
+---
+
+# Step 2: Re-root the Tree
+
+Now move root from parent `u` to child `v`.
+
+We want to compute:
+
+```text
+ans[v]
+```
+
+from already known:
+
+```text
+ans[u]
+```
+
+---
+
+# What Changes When Root Moves?
+
+Suppose root shifts:
+
+```text
+u  --->  v
+```
+
+Then:
+
+## Nodes inside subtree of `v`
+
+Their distance becomes **1 less**
+
+Count:
+
+```text
+subtreeSize[v]
+```
+
+## Nodes outside subtree of `v`
+
+Their distance becomes **1 more**
+
+Count:
+
+```text
+n - subtreeSize[v]
+```
+
+---
+
+# Re-root Formula
+
+```cpp
+ans[v] = ans[u] - subtreeSize[v] + (n - subtreeSize[v]);
+```
+
+---
+
+# Meaning
+
+* subtract nodes getting closer
+* add nodes getting farther
+
+---
+
+# Step 3: DFS Again
+
+Run second DFS:
+
+* parent = `u`
+* child = `v`
+
+Use formula to compute child answer from parent answer.
+
+---
+
+# Final Complexity
+
+```text
+O(n)
+```
+
+---
+
+# Memory Trick
+
+When moving root from parent to child:
+
+```text
+child subtree gets closer
+rest of tree gets farther
+```
+
+So:
+
+```cpp
+ans[child] = ans[parent] - size[child] + (n - size[child]);
+```
+
+---
+
+# Why This Problem Is Important
+
+Teaches:
+
+* Tree DP
+* Re-rooting technique
+* Subtree size usage
+* Interview-grade tree reasoning
+
+```
+```
