@@ -108,3 +108,20 @@ The `2^j` ancestor = ancestor after two `2^(j-1)` jumps.
 * Distance between nodes
 * Fast tree queries
 
+
+
+My Honest Recommendation For You
+
+Do:
+
+Must Solve
+Course Schedule II
+Network Breakdown
+New Flight Routes
+If Extra Time
+Graph Girth
+MST Edge Check
+Visiting Cities
+
+Skip rest for now.
+
