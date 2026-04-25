@@ -1,3 +1,24 @@
+````
+// How to calculate DAG after compression
+vector<vector<int>> dag(sccCount);
+set<pair<int,int>> used;
+
+for(int u=0; u<n; u++)
+{
+    for(auto v : adj[u])
+    {
+        int cu = comp[u];
+        int cv = comp[v];
+
+        if(cu != cv && !used.count({cu, cv}))
+        {
+            dag[cu].push_back(cv);
+            used.insert({cu, cv});
+        }
+    }
+}
+````
+
 # Coin Collector — Core Idea
 
 This is one of the best **SCC + DAG DP** problems.
