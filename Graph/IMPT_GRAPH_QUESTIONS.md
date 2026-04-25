@@ -1,3 +1,214 @@
+# CSES Graph Problems → Concepts Mapping
+
+---
+
+## Basic Graph Traversal
+
+### Counting Rooms
+- Grid DFS / BFS
+- Connected Components
+
+### Labyrinth
+- Grid BFS
+- Shortest Path
+- Path Reconstruction
+
+### Building Roads
+- Connected Components
+- DFS / DSU
+
+### Message Route
+- BFS Shortest Path
+- Parent Tracking
+
+### Building Teams
+- Bipartite Graph
+- 2 Coloring
+- BFS / DFS
+
+### Round Trip
+- Cycle Detection in Undirected Graph
+- DFS Parent Tracking
+
+### Monsters
+- Multi-source BFS
+- Escape Path
+- Grid shortest path
+
+---
+
+# Shortest Paths
+
+### Shortest Routes I
+- Dijkstra
+
+### Shortest Routes II
+- Floyd Warshall
+- All Pair Shortest Path
+
+### High Score
+- Bellman Ford
+- Positive/Negative Cycle Reachability
+
+### Flight Discount
+- Dijkstra with State
+- One discounted edge
+
+### Cycle Finding
+- Bellman Ford
+- Negative Cycle Detection
+
+### Flight Routes
+- K Shortest Paths
+- Priority Queue
+
+### Investigation
+- Dijkstra
+- Count shortest paths
+- Min/Max edges on shortest path
+
+---
+
+# DAG / Topological Sort
+
+### Round Trip II
+- Directed Cycle Detection
+- DFS Colors
+
+### Course Schedule
+- Topological Sort (Kahn / DFS)
+
+### Longest Flight Route
+- Longest Path in DAG
+- DP + Toposort
+
+### Game Routes
+- Count paths in DAG
+- DP + Toposort
+
+---
+
+# Functional Graph / Binary Lifting
+
+### Planets Queries I
+- Binary Lifting
+- K-th successor
+
+### Planets Queries II
+- Functional Graph
+- Binary Lifting
+- Cycle + distance queries
+
+### Planets Cycles
+- Functional Graph
+- Cycle length
+- Distance to cycle
+
+---
+
+# MST / DSU
+
+### Road Reparation
+- Minimum Spanning Tree
+- Kruskal / Prim
+
+### Road Construction
+- DSU
+- Components count
+- Largest component after each union
+
+---
+
+# SCC / Strong Connectivity
+
+### Flight Routes Check
+- Strong Connectivity Check
+- Kosaraju / Tarjan
+
+### Planets and Kingdoms
+- Strongly Connected Components
+
+### Coin Collector
+- SCC Compression DAG
+- DP on DAG
+
+### Giant Pizza
+- 2-SAT
+- SCC
+
+---
+
+# Euler Path / Circuit
+
+### Mail Delivery
+- Euler Circuit (Undirected)
+
+### Teleporters Path
+- Euler Path (Directed)
+
+### De Bruijn Sequence
+- Eulerian Path on De Bruijn Graph
+
+---
+
+# DP on Bitmask / Advanced Paths
+
+### Hamiltonian Flights
+- Bitmask DP
+- Hamiltonian Path Count
+
+### Knight's Tour
+- Backtracking
+- Warnsdorff heuristic
+
+---
+
+# Max Flow / Matching
+
+### Download Speed
+- Max Flow
+- Edmonds Karp / Dinic
+
+### Police Chase
+- Max Flow / Min Cut
+
+### School Dance
+- Bipartite Matching
+- Max Flow / Hopcroft Karp
+
+### Distinct Routes
+- Edge-disjoint Paths
+- Max Flow
+
+---
+
+# Highest ROI for Interviews
+
+## Must Know
+- Counting Rooms
+- Labyrinth
+- Building Roads
+- Message Route
+- Building Teams
+- Round Trip
+- Shortest Routes I
+- Course Schedule
+- Road Reparation
+- Flight Routes Check
+
+## Strong Candidate
+- High Score
+- Flight Discount
+- Investigation
+- Coin Collector
+- Giant Pizza
+
+## Advanced / CP Heavy
+- Hamiltonian Flights
+- De Bruijn Sequence
+- Max Flow set
+- Planets Queries II
+
 ---
 
 # ⭐ Tier 1 — ABSOLUTE MUST-KNOW (asked all the time)
