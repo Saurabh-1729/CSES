@@ -1,3 +1,127 @@
+# CSES Tree Problems – Concepts Cheat Sheet
+
+## 1. Subordinates
+**Concept:** DFS + Subtree Size
+
+Count number of nodes in each employee's subtree.
+
+---
+
+## 2. Tree Matching
+**Concept:** Tree DP
+
+Maximum matching in tree where one node can belong to at most one selected edge.
+
+---
+
+## 3. Tree Diameter
+**Concept:** Double DFS / BFS
+
+Run DFS from any node → farthest node A  
+Run DFS from A → farthest node B  
+Distance(A, B) = Diameter
+
+---
+
+## 4. Tree Distances I
+**Concept:** Diameter Endpoints Trick
+
+For every node:
+
+dist[node] = max(distance from endpoint1, distance from endpoint2)
+
+---
+
+## 5. Tree Distances II
+**Concept:** Re-rooting DP
+
+Find sum of distances from every node to all others.
+
+Formula:
+
+ans[child] = ans[parent] - size[child] + (n - size[child])
+
+---
+
+## 6. Company Queries I
+**Concept:** Binary Lifting
+
+Find k-th ancestor of a node.
+
+2^j ancestor table.
+
+---
+
+## 7. Company Queries II
+**Concept:** LCA + Binary Lifting
+
+Find Lowest Common Ancestor of two nodes.
+
+---
+
+## 8. Distance Queries
+**Concept:** LCA + Distance Formula
+
+distance(u,v) = depth[u] + depth[v] - 2 * depth[lca]
+
+---
+
+## 9. Counting Paths
+**Concept:** Path Contribution + LCA + DFS Accumulation
+
+Mark endpoints and propagate counts upward.
+
+---
+
+## 10. Subtree Queries
+**Concept:** Euler Tour + Fenwick Tree / Segment Tree
+
+Flatten subtree into contiguous range.
+
+---
+
+## 11. Path Queries
+**Concept:** Euler Tour + Segment Tree
+
+Root-to-node / path updates and queries.
+
+---
+
+## 12. Path Queries II
+**Concept:** Heavy Light Decomposition (HLD)
+
+Break tree into chains for path queries.
+
+---
+
+## 13. Distinct Colors
+**Concept:** DSU on Tree / Small to Large Merging
+
+Maintain subtree color sets efficiently.
+
+---
+
+## 14. Finding a Centroid
+**Concept:** Subtree Size
+
+Node where every child subtree size ≤ n/2.
+
+---
+
+## 15. Fixed-Length Paths I
+**Concept:** Centroid Decomposition
+
+Count paths with exact length `k`.
+
+---
+
+## 16. Fixed-Length Paths II
+**Concept:** Centroid Decomposition + Range Count
+
+Count paths with length in range [a, b].
+
+---
+
 ````md
 # CSES Tree Problems (High ROI for Software Engineer Interviews)
 
